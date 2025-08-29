@@ -1,1 +1,1 @@
-# bin bash
+it wasthe first part
