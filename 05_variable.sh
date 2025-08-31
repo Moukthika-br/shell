@@ -2,6 +2,7 @@
 
 echo " enter your pin please: "
 
-read PIN #here pin is variable
+read -s PIN #here pin is variable
+#-s for invisiblilty
 
 echo "your pin is: $PIN"
