@@ -48,7 +48,7 @@ if [ $? -eq 0 ]
 fi
 
 else 
-echo "$2 is already installed.. Nothing to do"
+echo "mysql is already installed.. Nothing to do"
 fi 
 
 dnf list installed python3 
@@ -61,7 +61,7 @@ if [ $? -eq 0 ]
 fi
 
 else 
-echo "$2 is already installed.. Nothing to do"
+echo "python3 is already installed.. Nothing to do"
 fi 
 
 
