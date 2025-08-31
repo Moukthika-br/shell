@@ -28,7 +28,7 @@ dnf list installed mysql
 
 
 
-if [ $? -eq 0 ]
+if [ $? -ne 0 ]
 then
  VALIDATE $1 "MYSQL"
  dnf install mysql -y
@@ -42,7 +42,7 @@ dnf list installed nginx
 
 
 
-if [ $? -eq 0 ]
+if [ $? -ne 0 ]
 then
 dnf install nginx -y
 
@@ -55,7 +55,7 @@ dnf list installed python3
 
 
 
-if [ $? -eq 0 ]
+if [ $? -ne 0 ]
 
 then
 dnf install python3 -y
