@@ -19,7 +19,7 @@ echo "Installing $2 is ......... success"
 else
 echo "Installing $2 is ............. failure"
 exit 1
-
+fi
 }
 
 
