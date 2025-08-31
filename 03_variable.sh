@@ -1,4 +1,4 @@
-#! bin/bash
+#!/bin/bash
 
 PERSON1=Mkthika #no space must be give, it hits the error
 PERSON2=Iiot
