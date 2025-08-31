@@ -6,4 +6,6 @@ MOVIES=("HIT" "COURT" "THANDEL")
 echo "${MOVIES[0]}"
 echo "${MOVIES[2]}"
 echo "${MOVIES[1]}"
+echo " all the movies : ${MOVIES[0]}"
+
 
