@@ -11,37 +11,58 @@ exit 1 # give anything but zero upto 127
 else 
 echo "you are running with root access"
 fi
-dnf list installed mysql 
 
-#checked already installed or not. if installed $? is 0, then 
-#if not installed $?  is not 0, expression is true
-
-
-if [ $? -ne 0 ]
+VALIDATE(){
+	if [ $1 -eq 0 ]
 then 
-echo "MYSQL is not installed ... going to install it"
+echo "Installing $2 is ......... success"
+else
+echo "Installing $2 is ............. failure"
+exit 1
+
+}
+
+
+
+dnf list installed mysql 
 
 dnf install mysql -y
 
 
 if [ $? -eq 0 ]
-then 
-echo "Installing MYSQL is ......... success"
-else
-echo "Installing MYSQL is ............. failure"
-exit 1
+ VALIDATE $1 "MYSQL"
 fi
 
 else 
-echo "MYSQL is already installed.. Nothing to do"
+echo "$2 is already installed.. Nothing to do"
 fi 
 
-dnf install mysql -y
 
-#if [ $? -eq 0 ]
-#then 
-#echo "Installing MYSQL is ......... success"
-#else
-#echo "Installing MYSQL is ............. failure"
-#exit 1
-#fi
+dnf list installed nginx 
+
+dnf install nginx -y
+
+
+if [ $? -eq 0 ]
+ VALIDATE $? "python3"
+fi
+
+else 
+echo "$2 is already installed.. Nothing to do"
+fi 
+
+dnf list installed python3 
+
+dnf install python3 -y
+
+
+if [ $? -eq 0 ]
+ VALIDATE $? "python3"
+fi
+
+else 
+echo "$2 is already installed.. Nothing to do"
+fi 
+
+
+
