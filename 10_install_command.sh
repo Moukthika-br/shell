@@ -11,31 +11,32 @@ exit 1 # give anything but zero upto 127
 else 
 echo "you are running with root access"
 fi
-
-VALIDATE(){
-	if [ $1 -eq 0 ]
-then 
-echo "Installing $2 is ......... success"
-else
-echo "Installing $2 is ............. failure"
-exit 1
-
-}
-
-
-
 dnf list installed mysql 
+
+#checked already installed or not. if installed $? is 0, then 
+#if not installed $?  is not 0, expression is true
+
+
+if [ $? -ne 0 ]
+then 
+echo "MYSQL is not installed ... going to install it"
 
 dnf install mysql -y
 
 
 if [ $? -eq 0 ]
- VALIDATE $1 "MYSQL"
+then 
+echo "Installing MYSQL is ......... success"
+else
+echo "Installing MYSQL is ............. failure"
+exit 1
 fi
 
 else 
-echo "$2 is already installed.. Nothing to do"
+echo "MYSQL is already installed.. Nothing to do"
 fi 
+
+
 
 
 dnf list installed nginx 
