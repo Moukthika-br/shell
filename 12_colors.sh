@@ -8,7 +8,7 @@ USERID=$(id -u)
 R="\e[31m"
 G="\e[32m"
 Y="\e[33m"
-N="\e[34m"
+N="\e[0m"
 
 if [ $USERID -ne 0 ]
 then
@@ -19,7 +19,7 @@ echo "hurrah!!!!!! you are running with root access"
 fi
 
 VALIDATE(){
-    if $1 -eq 0 ]
+    if [ $1 -eq 0 ]
     then 
     echo "Installing $2 is ... $G SUCESSSS $N"
     else
