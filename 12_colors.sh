@@ -21,9 +21,9 @@ fi
 VALIDATE(){
     if [ $1 -eq 0 ]
     then 
-    echo "Installing $2 is ... $G SUCESSSS $N"
+    echo -e "Installing $2 is ... $G SUCESSSS $N"
     else
-    echo "installing $2 is ..... $R FAILURE $N"
+    echo -e "installing $2 is ..... $R FAILURE $N"
     exit 1
     fi
 
@@ -35,12 +35,12 @@ dnf list installed mysql
 
 if [ $? -ne 0 ]
 then
-echo "$Y mysql is not installed , let me do it for you $N"
+echo -e  "$Y mysql is not installed , let me do it for you $N"
  VALIDATE $1 "MYSQL"
  dnf install mysql -y
 
  else 
-echo "$G mysql is already installed.. Nothing to do $N"
+echo -e  "$G mysql is already installed.. Nothing to do $N"
 fi 
 
 
@@ -50,13 +50,13 @@ dnf list installed nginx
 
 if [ $? -ne 0 ]
 then
-echo "$Y nginx is not installed , let me do it for you $N"
+echo -e "$Y nginx is not installed , let me do it for you $N"
 
 dnf install nginx -y
  VALIDATE $? "nginx"
 
 else 
-echo "$G nginx is already installed.. Nothing to do $N"
+echo -e "$G nginx is already installed.. Nothing to do $N"
 fi 
 
 dnf list installed python3 
@@ -66,7 +66,7 @@ dnf list installed python3
 if [ $? -ne 0 ]
 
 then
-echo "$Y python3  is not installed , let me do it for you $N"
+echo -e"$Y python3  is not installed , let me do it for you $N"
 
 dnf install python3 -y
 
@@ -74,7 +74,7 @@ dnf install python3 -y
 
 
 else 
-echo "$G python3  is already installed.. Nothing to do $N"
+echo -e "$G python3  is already installed.. Nothing to do $N"
 fi 
 
 
