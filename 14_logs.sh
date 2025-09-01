@@ -77,8 +77,6 @@ dnf install python3 -y
 
 
 else 
-echo -e "$G python3  is already installed.. Nothing to do $N"
+echo -e "$G python3  is already installed.. Nothing to do $N" &>>LOG_FILE
 fi 
-
-
 
