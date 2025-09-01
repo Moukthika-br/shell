@@ -66,7 +66,7 @@ dnf list installed python3
 if [ $? -ne 0 ]
 
 then
-echo "$Y python3 is not installed , let me do it for you $N"
+echo "$Y python3  is not installed , let me do it for you $N"
 
 dnf install python3 -y
 
