@@ -11,7 +11,7 @@ SCRIPT_NAME=$(echo $0 | cut -d "." -f1)
 LOG_FILE="$LOGS_FOLDER/$SCRIPT_NAME.log
 
 mkdir -p $LOGS_FOLDER
-echo "Script started executing at: $(date)" &>>$LOGS_FILE
+echo "Script started executing at: $(date)" | tee -a $LOGS_FILE
 
 if [ $USERID -ne 0 ]
 then
@@ -71,12 +71,11 @@ if [ $? -ne 0 ]
 then
 echo -e"$Y python3  is not installed , let me do it for you $N" &>>LOG_FILE
 
-dnf install python3 -y
+dnf install python3 -y &>>$LOG_FILE
 
  VALIDATE $? "python3"
 
 
 else 
 echo -e"$G python3  is already installed.. Nothing to do $N" &>>LOG_FILE
-exit 1
 fi 
