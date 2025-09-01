@@ -36,7 +36,7 @@ dnf list installed mysql
 if [ $? -ne 0 ]
 then
 echo -e  "$Y mysql is not installed , let me do it for you $N"
- VALIDATE $1 "MYSQL"
+ VALIDATE $? "MYSQL"
  dnf install mysql -y
 
  else 
